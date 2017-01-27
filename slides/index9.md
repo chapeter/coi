@@ -1,9 +1,16 @@
 
-###Step 2
-Build the image
+###Step 1
+Create Dockerfile inside the project's base folder.  Think of this as build instructions.
 
-```docker build -t chapeter/coi```
+```
+FROM python:2.7.13-alpine
 
-```-t <repositoryname>:<tag>```
-The tag flag can be used to set a repo and name for your.  In our case I'm using ```chapeter/coi``` as the repository, and without indicating a ```tag``` it implies ```:latest```
+COPY . web/
+WORKDIR web
+
+RUN pip install -r requirements.txt
+
+EXPOSE 5000
+CMD ["python", "coi.py"]
+```
 

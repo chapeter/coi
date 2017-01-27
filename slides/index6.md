@@ -1,9 +1,11 @@
 ##Install Without Containers
 
-1. Build physical or virtual server
-2. Download code
-  1. ```git clone http://github.com/chapeter/coi```
-2. Setup environment
+* Build physical or virtual server
+* Download code
+  ```
+  git clone http://github.com/chapeter/coi
+  ```
+* Setup environment
   * Install correct version of Python<br>
 
 
@@ -19,24 +21,4 @@
     $ python2.7 -V
     Python 2.7.13
     ```  
-  * Install PIP
-
-  ```
-  $ wget https://bootstrap.pypa.io/get-pip.py
-  
-  $ python get-pip.py
-  ```
-  * Install Dependencies
-
-  ```
-  cd coi
-  pip install -r requirements.txt
-  ```
-3. Run webapp
-  
-  ```
-  $ python coi.py
-   * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
-  ```
-4. Repeat on each server
-  
+    

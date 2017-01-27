@@ -1,10 +1,4 @@
 
-###Step 5
-Update Swarm Service
-
-```
-$ docker service update --image chapeter/coi:unicorn coi
-```
-
-![](images/swarm4.png)
+###Step 2
+Make our code changes.  In this example I'm going to change the image shown on the webapp.
 

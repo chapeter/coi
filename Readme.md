@@ -38,7 +38,9 @@ Docker and Rocket provide and API to make all of this nearly transparent to the 
 ##Use Case - Webapp
 Deploy 3 instances of the Blobfish Facts webapp
 
-```http://github.com/chapeter/coi```
+```
+http://github.com/chapeter/coi
+```
 
 Python Flask app
 
@@ -47,10 +49,12 @@ Python Flask app
 [item]: # (slide)
 ##Install Without Containers
 
-1. Build physical or virtual server
-2. Download code
-  1. ```git clone http://github.com/chapeter/coi```
-2. Setup environment
+* Build physical or virtual server
+* Download code
+  ```
+  git clone http://github.com/chapeter/coi
+  ```
+* Setup environment
   * Install correct version of Python<br>
 
 
@@ -66,6 +70,11 @@ Python Flask app
     $ python2.7 -V
     Python 2.7.13
     ```  
+    
+[item]: # (/slide)
+
+[item]: # (slide)
+
   * Install PIP
 
   ```
@@ -79,13 +88,13 @@ Python Flask app
   cd coi
   pip install -r requirements.txt
   ```
-3. Run webapp
+* Run webapp
   
   ```
   $ python coi.py
    * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
   ```
-4. Repeat on each server
+* Repeat on each server
   
 [item]: # (/slide)
 
@@ -111,19 +120,23 @@ EXPOSE 5000
 CMD ["python", "coi.py"]
 ```
 
-```FROM``` indicates the base image
+[item]: # (/slide)
 
-```:2.7.13-alpine``` indicates a tag.  Here it means Python 2.7.13 based on Alpine Linux
+[item]: # (slide)
 
-```COPY``` copies the current directly into another directory inside the container
+```FROM``` - indicates the base image
 
-```WORKDIR``` changes working directory (cd)
+```:2.7.13-alpine``` - indicates a tag.  Here it means Python 2.7.13 based on Alpine Linux
 
-```RUN``` This is a command run during the build process
+```COPY``` - copies the current directly into another directory inside the container
 
-```EXPOSE``` This indicate the port the container is listening on
+```WORKDIR``` - changes working directory (cd)
 
-```CMD``` This is the command run at container runtime (can be overridden)
+```RUN``` - This is a command run during the build process
+
+```EXPOSE``` - This indicate the port the container is listening on
+
+```CMD``` - This is the command run at container runtime (can be overridden)
 
 [item]: # (/slide)
 
@@ -132,9 +145,13 @@ CMD ["python", "coi.py"]
 ###Step 2
 Build the image
 
-```docker build -t chapeter/coi```
+```
+docker build -t chapeter/coi
+```
 
-```-t <repositoryname>:<tag>```
+```
+-t <repositoryname>:<tag>
+```
 The tag flag can be used to set a repo and name for your.  In our case I'm using ```chapeter/coi``` as the repository, and without indicating a ```tag``` it implies ```:latest```
 
 [item]: # (/slide)
@@ -150,12 +167,18 @@ docker push chapeter/coi
 
 By default docker will use hub.docker.com, but you can set your own private or public repositories.
 
+[item]: # (/slide)
+
+[item]: # (slide)
+
 ###Step 4
 At this point we are ready for deployment.  We have multiple options.  At a very basic level we can deploy a container on 3 servers using docker.
 
 On each server run:
 
-```docker run -d -p 80:5000 chapeter/coi:latest```
+```
+docker run -d -p 80:5000 chapeter/coi:latest
+```
 
 ```-d``` - Run in detached mode (run in background)
 
@@ -167,7 +190,6 @@ On each server run:
 ###Alternate Step 4
 Deploy container as a service in a cluster.  Here we will use Docker Swarm.
 
-I am using a swarm of 3 servers.
 ![](images/swarm1.png)
 
 [item]: # (/slide)
@@ -175,7 +197,8 @@ I am using a swarm of 3 servers.
 [item]: # (slide)
 
 ```
-$ docker service create -p 80:5000 --replicas 3 --name=coi chapeter/coi:latest
+$ docker service create -p 80:5000 \
+  --replicas 3 --name=coi chapeter/coi:latest
 ```
 ![](images/swarm3.png)
 
@@ -250,6 +273,7 @@ $ docker service update --image chapeter/coi:unicorn coi
 [item]: # (slide)
 ##Still...why do I care?
 
+[item]: # (/slide)
 
 #More info
 [Imapex training on Advance Docker](https://github.com/imapex-training/mod_adv_docker)

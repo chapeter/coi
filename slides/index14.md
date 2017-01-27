@@ -1,10 +1,5 @@
+###Alternate Step 4
+Deploy container as a service in a cluster.  Here we will use Docker Swarm.
 
-###Step 1
-"Save" the current state of our repo
-
-```
-$ docker build -t chapeter/coi:sad
-
-$ docker push chapeter/coi:sad
-```
+![](images/swarm1.png)
 

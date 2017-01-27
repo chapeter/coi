@@ -1,8 +1,10 @@
 
-```
-$ docker service create -p 80:5000 --replicas 3 --name=coi chapeter/coi:latest
-```
-![](images/swarm3.png)
+###Step 3
+Upload image to repository
 
-< 5 seconds
+```
+docker push chapeter/coi
+```
+
+By default docker will use hub.docker.com, but you can set your own private or public repositories.
 

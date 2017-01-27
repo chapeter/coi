@@ -1,21 +1,15 @@
 
-###Step 3
-Upload image to repository
+```FROM``` - indicates the base image
 
-```
-docker push chapeter/coi
-```
+```:2.7.13-alpine``` - indicates a tag.  Here it means Python 2.7.13 based on Alpine Linux
 
-By default docker will use hub.docker.com, but you can set your own private or public repositories.
+```COPY``` - copies the current directly into another directory inside the container
 
-###Step 4
-At this point we are ready for deployment.  We have multiple options.  At a very basic level we can deploy a container on 3 servers using docker.
+```WORKDIR``` - changes working directory (cd)
 
-On each server run:
+```RUN``` - This is a command run during the build process
 
-```docker run -d -p 80:5000 chapeter/coi:latest```
+```EXPOSE``` - This indicate the port the container is listening on
 
-```-d``` - Run in detached mode (run in background)
-
-```-p``` - Publish port.  In our case we are mapping server port 80 to container port 5000.  Think of this like a NAT
+```CMD``` - This is the command run at container runtime (can be overridden)
 

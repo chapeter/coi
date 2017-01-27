@@ -1,9 +1,10 @@
-###Step 4
-Publish images
+
+###Step 1
+"Save" the current state of our repo
 
 ```
-$ docker push chapeter/coi:unicorn
+$ docker build -t chapeter/coi:sad
 
-$ docker push chapeter/coi:latest
+$ docker push chapeter/coi:sad
 ```
 
