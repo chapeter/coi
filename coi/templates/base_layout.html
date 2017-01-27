@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    {% block head %}
+    <script src="/static/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <title>Amazing Blobfish</title>
+    {% endblock %}
+  </head>
+    <h1>Amazing Blobfish Facts</h1>
+  <body>
+    <img src="/static/blobfish.jpg" height="379" width="389"><br>
+    <h2><div id="hostname">Processed by {{ hostname }}</div></h2>
+    <h3>Facts:</h3>
+      <ul>
+        <li>Blobfish live in the waters around Australia, New Zealand, and Tasmania</li>
+        <li>Blobfish do not have a full skeleton</li>
+        <li>You cannot have a blobfish as a pet.  They die when brought to the surface</li>
+        <li>Blobfish look different deep underwater.</li>
+        <li>Blobfish are ugly</li>
+      </ul>
+  </body>
+</html>
+
