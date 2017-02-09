@@ -1,5 +1,7 @@
 FROM python:2.7.13-alpine
 
+RUN pip install --upgrade pip
+
 COPY . web/
 WORKDIR web
 
